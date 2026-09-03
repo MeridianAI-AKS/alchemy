@@ -1,2 +1,6 @@
-fastapi==0.115.6
-pydantic==2.10.4
+# Vercel's builder runs CPython 3.14, so these must resolve to prebuilt cp314
+# wheels — older pydantic pins have no 3.14 wheel and fall back to compiling
+# pydantic-core from Rust, which fails (PyO3 <=0.22 supports 3.13 at most).
+# pydantic 2.13.x pulls pydantic-core 2.46.x, which publishes cp311-cp314 wheels.
+fastapi==0.141.1
+pydantic==2.13.5
