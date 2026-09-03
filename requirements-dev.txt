@@ -1,0 +1,4 @@
+# Local development only — Vercel provides its own ASGI server,
+# so uvicorn is deliberately kept out of requirements.txt.
+-r requirements.txt
+uvicorn[standard]==0.34.0
